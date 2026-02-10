@@ -9,7 +9,7 @@ def hello_world(request):
     return Response(message)
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", "8000"))
+    port = int(os.environ.get("PORT", "8080"))
 
     with Configurator() as config:
         config.add_route('hello', '/')
