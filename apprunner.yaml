@@ -3,23 +3,14 @@ runtime: nodejs22
 build:
   commands:
     pre-build:
+      - npm install grunt grunt-cli
       - npm install --only=dev
-      - node test.js
+      - npm run build
     build:
       - npm install --production
-    post-build:
-      - node node_modules/ejs/postinstall.js
-  env:
-    - name: MY_VAR_EXAMPLE
-      value: "example"
 run:
   runtime-version: 22.14.0
-  pre-run: 
-    - node copy-global-files.js
   command: node app.js
   network:
     port: 8000
     env: APP_PORT
-  env:
-    - name: MY_VAR_EXAMPLE
-      value: "example"
