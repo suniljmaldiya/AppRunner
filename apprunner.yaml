@@ -5,4 +5,7 @@ build:
     build:
       - pip install -r requirements.txt
 run:
-  command: python server.py
+  runtime-version: 3.11.9
+  command: sh startup.sh
+  network:
+    port: 8000
