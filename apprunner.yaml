@@ -6,7 +6,7 @@ build:
     - pip install -r requirements.txt
 
 run:
-  command: python app.py
+  command: python server.py
   network:
     port: 8080
 
